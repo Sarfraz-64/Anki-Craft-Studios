@@ -34,6 +34,8 @@
             justify-content: center;
         }
 
+
+
         .box {
             width: 200px;
             height: 250px;
@@ -51,11 +53,11 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 97%;
             height: 20%;
             background-color: black;
             color: white;
-            padding: 5px;
+            padding: 8px;
             content: attr(data-content);
         }
 
@@ -75,7 +77,6 @@
             height: 100%;
         }
 
-        /* Fixed buttons */
         .fixed-buttons {
             position: fixed;
             top: 20px;
@@ -83,7 +84,7 @@
             z-index: 999;
         }
 
-        .login-btn,
+
         .signup-btn {
             padding: 10px 20px;
             background-color: #03172c;
@@ -91,13 +92,86 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            position: absolute;
             margin: 5px;
+            text-decoration: none;
+
         }
 
-        .login-btn:hover,
+
         .signup-btn:hover {
             background-color: #0056b3;
         }
+
+
+
+        .menu-btn {
+    cursor: pointer;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #03172c;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items at the center and distribute space between them */
+}
+
+.menu-container {
+    position: fixed; /* Position fixed for it to stay in place even while scrolling */
+    top: 20px; /* Adjust top position as needed */
+    left: 20px;
+}
+
+.menu-btn {
+    cursor: pointer;
+    z-index: 2; /* Ensure menu button is on top of the menu content */
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: width 0.3s ease;
+    padding-top: 25px;
+}
+
+.menu-option {
+    display: block;
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    transform: translateX(-20px); /* Adjust the distance from the menu button */
+    transition: transform 0.3s ease;
+}
+
+.menu-option:hover {
+    background-color: #555;
+}
+
+
     </style>
 </head>
 
@@ -105,10 +179,22 @@
 
     <header>
         <h1>Anki Craft Studios</h1>
-        <div class="fixed-buttons">
-            <button class="login-btn">Log In</button>
-            <button class="signup-btn">Sign Up</button>
+        <div>
+            <a class="signup-btn fixed-buttons" href="signup.html">Sign Up</a>
         </div>
+
+        <div class="menu-container">
+            <div class="menu-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="menu-content">
+                <button class="menu-option"><a style="text-decoration: none; color: inherit;" href="index.html">Home</a></button>
+                <button class="menu-option"><a style="text-decoration: none; color: inherit;" href="#paragraph">About</a></button>
+            </div>
+        </div>
+        
     </header>
 
     <div class="container">
@@ -125,7 +211,8 @@
 
         <div class="box box_3_pos" data-content="I will create language Anki cards"><a target="_blank"
                 href="https://www.fiverr.com/hassan1277?source=gig_cards&referrer_gig_slug=make-memorable-anki-flashcards&ref_ctx_id=bd9b7c860a2b4f21a202f894e6df5f14&imp_id=44cd8f12-149a-477a-a929-549869afcbbf"></a>
-            <img src="xz.png" alt="Image isn't loaded"></a> </div>
+            <img src="xz.png" alt="Image isn't loaded"></a>
+        </div>
 
         <div class="box box_4_pos">Abu Bkr</div>
         <div class="box box_5_pos">Ahmed</div>
@@ -135,11 +222,60 @@
         <div class="box box_9_pos">Tahir</div>
         <div class="box box_10_pos ">Muzamil</div>
 
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const menuContainer = document.querySelector('.menu-container');
+                const menuBtn = document.querySelector('.menu-btn');
+                const menuContent = document.querySelector('.menu-content');
+                const menuOptions = document.querySelectorAll('.menu-option');
+        
+                let menuOpen = false;
+        
+                // Function to open menu
+                function openMenu() {
+                    menuContent.style.width = '150px';
+                    menuOptions.forEach(option => {
+                        option.style.transform = 'translateX(0)';
+                    });
+                    menuOpen = true;
+                }
+        
+                // Function to close menu
+                function closeMenu() {
+                    menuContent.style.width = '0';
+                    menuOptions.forEach(option => {
+                        option.style.transform = 'translateX(-20px)';
+                    });
+                    menuOpen = false;
+                }
+        
+                // Toggle menu on button click
+                menuBtn.addEventListener('click', function() {
+                    if (menuOpen) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+        
+                // Expand menu on hover
+                menuContainer.addEventListener('mouseenter', function() {
+                    openMenu();
+                });
+        
+                // Contract menu on mouse leave
+                menuContainer.addEventListener('mouseleave', function() {
+                    closeMenu();
+                });
+            });
+        </script>
+        
+
     </div>
 
     <footer>
         <h2>About Us</h2>
-        <p>Welcome to <strong>Anki Craft Studios</strong>, your ultimate destination for high-quality Anki cards
+        <p id="paragraph">Welcome to <strong>Anki Craft Studios</strong>, your ultimate destination for high-quality Anki cards
             tailored specifically for medical students and exam preparation.
 
             At [Your Website Name], we understand the demanding nature of medical studies and the importance of
