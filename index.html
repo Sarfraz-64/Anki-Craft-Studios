@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anki Craft Studios</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: beige;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 250px;
+            margin: 10px;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .box::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            content: attr(data-content);
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        .box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fixed buttons */
+        .fixed-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .login-btn,
+        .signup-btn {
+            padding: 10px 20px;
+            background-color: #03172c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .login-btn:hover,
+        .signup-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Anki Craft Studios</h1>
+        <div class="fixed-buttons">
+            <button class="login-btn">Log In</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="box" data-content="I will create professional Anki Cards for exams">
+            <a target="_blank"
+                href="https://www.fiverr.com/mrq_workspace/create-perfect-anki-cards-for-exams?context_referrer=search_gigs&source=main_banner&ref_ctx_id=0ba8c80abb78478bb3eadef21d1be36a&pckg_id=1&pos=15&context_type=auto&funnel=0ba8c80abb78478bb3eadef21d1be36a&imp_id=73f09690-fd1a-4cc0-8f80-3b8840cec39d">
+                <img src="xx.png" alt="Image isn't loaded">
+            </a>
+        </div>
+        <!-- Add more boxes here -->
+        <div class="box box_2_pos " data-content="I will create Quizlet Anki Flash Cards"><a target="_blank"
+                href="https://www.fiverr.com/syedmuzammil273?source=gig_page&gigs=slug%3Amake-anki-from-quizlet%2Cpckg_id%3A1">
+                <img src="xy.png" alt="Image isn't loaded"></a> </div>
+
+        <div class="box box_3_pos" data-content="I will create language Anki cards"><a target="_blank"
+                href="https://www.fiverr.com/hassan1277?source=gig_cards&referrer_gig_slug=make-memorable-anki-flashcards&ref_ctx_id=bd9b7c860a2b4f21a202f894e6df5f14&imp_id=44cd8f12-149a-477a-a929-549869afcbbf"></a>
+            <img src="xz.png" alt="Image isn't loaded"></a> </div>
+
+        <div class="box box_4_pos">Abu Bkr</div>
+        <div class="box box_5_pos">Ahmed</div>
+        <div class="box box_6_pos">Ayan</div>
+        <div class="box box_7_pos">Haseeb</div>
+        <div class="box box_8_pos">Aftab</div>
+        <div class="box box_9_pos">Tahir</div>
+        <div class="box box_10_pos ">Muzamil</div>
+
+    </div>
+
+    <footer>
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Anki Craft Studios</strong>, your ultimate destination for high-quality Anki cards
+            tailored specifically for medical students and exam preparation.
+
+            At [Your Website Name], we understand the demanding nature of medical studies and the importance of
+            effective study tools. Our team consists of experienced medical professionals and educators who are
+            passionate about helping students succeed in their academic endeavors.
+
+            What sets us apart is our commitment to excellence and innovation. Each Anki card is meticulously crafted to
+            cover essential topics, designed to enhance retention and understanding. We prioritize accuracy and
+            relevance, ensuring that our cards align with the latest medical curriculum and exam requirements.
+
+            Our mission is to empower students to achieve their full potential by providing them with the tools they
+            need to excel. Whether you're studying for medical school exams, board certifications, or any other
+            assessment, our Anki cards are here to support you every step of the way.
+
+            Join the thousands of satisfied users who have benefited from our comprehensive study materials. Explore our
+            collection of Anki cards and take your learning to the next level with [Anki Craft Studios].
+
+            Thank you for choosing [Your Website Name] as your trusted study partner. We're dedicated to your success.
+
+            ---
+
+            Feel free to adjust and personalize this text to better fit your brand and message!</p>
+    </footer>
+
+</body>
+
+</html>
